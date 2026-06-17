@@ -1,0 +1,375 @@
+/* DESIGN SYSTEM & CUSTOM STYLING - SPLITBILL APP (LIGHT MODE) */
+
+/* 1. Global Variables & Core Tokens */
+:root {
+    --bg-primary: #f8fafc; /* Slate 50 - clean, bright */
+    --bg-secondary: #ffffff; /* White card / nav surfaces */
+    --surface-card: rgba(255, 255, 255, 0.85); /* Slightly transparent white */
+    
+    --color-primary: #4f46e5; /* Indigo 600 */
+    --color-primary-light: #6366f1; /* Indigo 500 */
+    --color-primary-dark: #3730a3; /* Indigo 800 */
+    
+    --color-success: #059669; /* Emerald 600 */
+    --color-info: #0284c7; /* Sky 600 */
+    --color-danger: #e11d48; /* Rose 600 */
+    --color-warning: #d97706; /* Amber 600 */
+    
+    --text-white: #0f172a; /* Slate 900 - dark text replacing white text */
+    --text-muted: #64748b; /* Slate 500 */
+    --border-color: rgba(15, 23, 42, 0.08); /* Dark slate borders with very low opacity */
+    --border-glow: rgba(79, 70, 229, 0.08);
+    
+    --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+    --font-display: 'Outfit', var(--font-sans);
+    
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* 2. Base Reset & Typography */
+body {
+    background: radial-gradient(circle at top right, #e0e7ff 0%, var(--bg-primary) 70%);
+    background-color: var(--bg-primary);
+    color: var(--text-white);
+    font-family: var(--font-sans);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6, .font-outfit {
+    font-family: var(--font-display);
+    font-weight: 700;
+}
+
+/* 3. Header & Navbar Styling */
+.navbar {
+    background-color: rgba(255, 255, 255, 0.8) !important;
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border-bottom: 1px solid var(--border-color);
+    padding: 1rem 0;
+}
+
+.brand-text {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: 1.45rem;
+    letter-spacing: -0.02em;
+    color: var(--text-white);
+}
+
+.text-primary-light {
+    color: var(--color-primary-light);
+}
+
+.navbar-nav .nav-link {
+    color: var(--text-muted);
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: var(--transition-smooth);
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active {
+    color: var(--text-white);
+}
+
+.btn-user {
+    background: rgba(15, 23, 42, 0.04);
+    border: 1px solid var(--border-color);
+    color: var(--text-white) !important;
+    border-radius: 50px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: var(--transition-smooth);
+}
+
+.btn-user:hover {
+    background: rgba(79, 70, 229, 0.08);
+    border-color: rgba(79, 70, 229, 0.2);
+}
+
+/* 4. Glassmorphism Card System */
+.card-custom {
+    background: var(--surface-card);
+    backdrop-filter: blur(16px) saturate(120%);
+    -webkit-backdrop-filter: blur(16px) saturate(120%);
+    border: 1px solid var(--border-color) !important;
+    border-radius: 1.25rem !important;
+    color: var(--text-white);
+    transition: var(--transition-smooth);
+    box-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.05) !important;
+}
+
+/* Micro-animations: Hover lift and glow effect */
+.hover-lift {
+    transition: var(--transition-smooth);
+}
+.hover-lift:hover {
+    transform: translateY(-5px);
+    border-color: rgba(79, 70, 229, 0.2) !important;
+    box-shadow: 0 12px 30px -10px rgba(79, 70, 229, 0.15) !important;
+}
+
+/* 5. Gradient & Badge Styles */
+.text-gradient-primary {
+    background: linear-gradient(135deg, var(--color-primary-dark) 0%, var(--color-primary) 50%, var(--color-primary-light) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.bg-primary-soft {
+    background-color: rgba(79, 70, 229, 0.08) !important;
+}
+.text-primary {
+    color: var(--color-primary) !important;
+}
+
+.bg-success-soft {
+    background-color: rgba(5, 150, 105, 0.08) !important;
+}
+.text-success {
+    color: var(--color-success) !important;
+}
+
+.bg-info-soft {
+    background-color: rgba(2, 132, 199, 0.08) !important;
+}
+.text-info {
+    color: var(--color-info) !important;
+}
+
+.bg-danger-soft {
+    background-color: rgba(225, 29, 72, 0.08) !important;
+}
+.text-danger {
+    color: var(--color-danger) !important;
+}
+
+.bg-warning-soft {
+    background-color: rgba(217, 119, 6, 0.08) !important;
+}
+.text-warning {
+    color: var(--color-warning) !important;
+}
+
+.bg-dark-soft {
+    background-color: rgba(15, 23, 42, 0.04) !important;
+}
+
+/* 6. Form Controls & Interactivity */
+.form-control, .input-group-text {
+    border-radius: 0.75rem;
+    transition: var(--transition-smooth);
+}
+
+.input-group-custom {
+    border: 1px solid var(--border-color);
+    border-radius: 0.75rem;
+    background: rgba(15, 23, 42, 0.02);
+    transition: var(--transition-smooth);
+}
+
+.input-group-custom:focus-within {
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
+}
+
+.input-group-custom input:focus {
+    box-shadow: none;
+    outline: none;
+}
+
+.form-control {
+    background-color: #ffffff;
+    border: 1px solid var(--border-color);
+    color: var(--text-white);
+}
+
+.form-control:focus {
+    background-color: #ffffff;
+    border-color: var(--color-primary);
+    color: var(--text-white);
+    box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
+}
+
+/* 7. Premium Buttons */
+.btn-primary {
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+    border: none;
+    border-radius: 0.75rem;
+    padding: 0.65rem 1.5rem;
+    font-weight: 500;
+    color: #ffffff !important;
+    transition: var(--transition-smooth);
+}
+
+.btn-primary:hover, .btn-primary:focus {
+    background: linear-gradient(135deg, var(--color-primary-light) 0%, var(--color-primary) 100%);
+    box-shadow: 0 4px 15px -3px rgba(79, 70, 229, 0.4);
+    transform: translateY(-1px);
+}
+
+.btn-outline-primary {
+    border-color: rgba(79, 70, 229, 0.4);
+    color: var(--color-primary);
+    border-radius: 0.75rem;
+    transition: var(--transition-smooth);
+}
+
+.btn-outline-primary:hover {
+    background-color: var(--color-primary);
+    border-color: var(--color-primary);
+    color: #ffffff !important;
+}
+
+.btn-cta {
+    border-radius: 50px !important;
+}
+
+.btn-outline-secondary {
+    border-color: var(--border-color);
+    color: var(--text-muted);
+    transition: var(--transition-smooth);
+}
+
+.btn-outline-secondary:hover {
+    background-color: rgba(15, 23, 42, 0.04);
+    border-color: var(--text-white);
+    color: var(--text-white);
+}
+
+/* Icon button circles */
+.btn-icon-only {
+    width: 36px;
+    height: 36px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+}
+
+/* 8. Table Styling */
+.table {
+    --bs-table-bg: transparent;
+    --bs-table-hover-bg: rgba(15, 23, 42, 0.02);
+    --bs-table-hover-color: var(--text-white);
+    border-color: rgba(15, 23, 42, 0.06);
+}
+
+.table th {
+    font-weight: 600;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    border-bottom: 2px solid rgba(15, 23, 42, 0.06) !important;
+}
+
+.table td {
+    padding: 1rem 0.75rem;
+    font-size: 0.9rem;
+}
+
+/* 9. Interactive Checkbox Buttons */
+.form-check-button {
+    display: inline-block;
+}
+
+.form-check-button .btn-check + .btn {
+    font-size: 0.75rem;
+    padding: 0.25rem 0.75rem;
+    border-color: rgba(15, 23, 42, 0.1);
+    background: rgba(15, 23, 42, 0.02);
+    color: var(--text-muted);
+    transition: var(--transition-smooth);
+}
+
+.form-check-button .btn-check:checked + .btn {
+    background-color: rgba(79, 70, 229, 0.08) !important;
+    border-color: var(--color-primary) !important;
+    color: var(--color-primary) !important;
+    box-shadow: 0 0 10px rgba(79, 70, 229, 0.05);
+}
+
+.btn-xs {
+    font-size: 0.75rem;
+    padding: 0.25rem 0.6rem;
+}
+
+/* 10. Modals & Popups styling */
+.modal-custom .modal-content {
+    background-color: #ffffff;
+    border: 1px solid var(--border-color);
+}
+
+.modal-backdrop {
+    --bs-backdrop-opacity: 0.5;
+    background-color: #000000;
+}
+
+/* 11. Footer System */
+.footer {
+    border-top: 1px solid var(--border-color);
+    background-color: rgba(15, 23, 42, 0.02);
+}
+
+/* Glow animation */
+.blur-glow {
+    filter: blur(100px);
+}
+
+/* 12. Bootstrap Dark Class Overrides (For clean Light Mode conversion) */
+.text-white {
+    color: var(--text-white) !important;
+}
+.text-light {
+    color: var(--text-muted) !important;
+}
+.text-white-50 {
+    color: rgba(15, 23, 42, 0.6) !important;
+}
+.bg-dark {
+    background-color: var(--bg-secondary) !important;
+    color: var(--text-white) !important;
+}
+.bg-dark-soft {
+    background-color: rgba(15, 23, 42, 0.04) !important;
+}
+.form-control.bg-dark {
+    background-color: var(--bg-secondary) !important;
+    color: var(--text-white) !important;
+    border: 1px solid var(--border-color) !important;
+}
+.form-control.bg-dark:focus {
+    border-color: var(--color-primary) !important;
+    box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1) !important;
+}
+.input-group-text.bg-dark {
+    background-color: #e2e8f0 !important;
+    color: var(--text-muted) !important;
+    border: 1px solid var(--border-color) !important;
+}
+.table.table-dark {
+    --bs-table-bg: transparent;
+    --bs-table-hover-bg: rgba(15, 23, 42, 0.02);
+    --bs-table-hover-color: var(--text-white);
+    border-color: rgba(15, 23, 42, 0.06);
+    color: var(--text-white) !important;
+}
+.table.table-dark th {
+    border-bottom: 2px solid rgba(15, 23, 42, 0.06) !important;
+    color: var(--text-muted) !important;
+    background-color: rgba(15, 23, 42, 0.02) !important;
+}
+.table.table-dark td {
+    color: var(--text-white) !important;
+}
+.btn-close-white {
+    filter: none !important;
+}
+.border-secondary {
+    border-color: rgba(15, 23, 42, 0.1) !important;
+}
